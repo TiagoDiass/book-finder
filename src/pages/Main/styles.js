@@ -197,16 +197,33 @@ export const BooksSection = styled.section`
     flex-wrap: wrap;
   }
 
-  h1.no-books {
-    margin-top: 6.7rem;
-    text-align: center;
-    font-weight: 500;
-    color: var(--color-primary);
+  .no-books {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 45vw;
+      max-width: 460px;
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: 500;
+      color: var(--color-primary);
+    }
   }
 
   @media (max-width: 1125px) {
     .container {
       width: 100%;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .no-books h1 {
+      font-size: 1.2rem;
     }
   }
 `;

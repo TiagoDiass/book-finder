@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import api from '../../services/api';
+import svg from '../../assets/images/books.svg';
 
 // Styled components
 import { InputSection, SubmitButton, BooksSection } from './styles';
@@ -92,7 +93,10 @@ function Main() {
       <BooksSection>
         <div className="container">
           {!books.length ? (
-            <h1 className="no-books">No books yet, you need to search for some book</h1>
+            <div className="no-books">
+              <img src={svg} alt="No books" />
+              <h1>No books yet, you need to search for some book</h1>
+            </div>
           ) : (
             books.map((book, index) => <BookBlock book={book} key={index} />)
           )}
