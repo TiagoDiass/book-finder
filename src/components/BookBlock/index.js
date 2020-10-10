@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { BookBlock as BookBlockStyled, DetailsButton } from './styles';
+import { BookBlock as BookBlockStyled } from './styles';
 
 const BookBlock = (props) => {
-  const { thumbnailUrl, title, authors, description } = props.book;
+  const { id, thumbnailUrl, title, authors, description } = props.book;
 
   return (
     <BookBlockStyled>
@@ -17,9 +18,9 @@ const BookBlock = (props) => {
         </div>
         <p>{description}</p>
         <div className="details">
-          <DetailsButton>
+          <Link to={`/books/${encodeURIComponent(id)}`}>
             DETAILS <i className="fas fa-info-circle"></i>
-          </DetailsButton>
+          </Link>
         </div>
       </div>
     </BookBlockStyled>

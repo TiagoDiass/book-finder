@@ -36,6 +36,7 @@ function Main() {
           : 'https://books.google.com.br/googlebooks/images/no_cover_thumb.gif';
 
         return {
+          id: book.id,
           title: book.volumeInfo.title,
           authors: book.volumeInfo.authors,
           description: book.volumeInfo.description,

@@ -58,6 +58,28 @@ export const BookBlock = styled.div`
     .details {
       width: 100%;
     }
+
+    a {
+      display: block;
+      text-decoration: none;
+      width: 100%;
+      background-color: var(--color-blue);
+      color: var(--white);
+      text-transform: uppercase;
+      font-weight: 500;
+      border: none;
+      outline: none;
+      padding: 0.5rem 0.8rem;
+      text-align: center;
+      border-radius: 0.4rem;
+      cursor: pointer;
+
+      transition: filter 0.2s ease;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
   }
 
   &:hover {
@@ -90,25 +112,5 @@ export const BookBlock = styled.div`
     .book-data {
       width: 65%;
     }
-  }
-`;
-
-export const DetailsButton = styled.button.attrs((props) => ({ type: 'button' }))`
-  width: 100%;
-  background-color: var(--color-blue);
-  color: var(--white);
-  text-transform: uppercase;
-  font-weight: 500;
-  border: none;
-  outline: none;
-  padding: 0.5rem 0.8rem;
-  text-align: center;
-  border-radius: 0.4rem;
-  cursor: pointer;
-
-  transition: filter 0.2s ease;
-
-  &:hover {
-    filter: brightness(0.9);
   }
 `;
