@@ -21,6 +21,30 @@ const fadeFromBottom = keyframes`
   }
 `;
 
+const fadeFromLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-30px)
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0)
+  }
+`;
+
+const fadeFromRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(30px)
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0)
+  }
+`;
+
 export const InputSection = styled.section`
   height: 37vh;
 
@@ -206,12 +230,14 @@ export const BooksSection = styled.section`
     img {
       width: 45vw;
       max-width: 460px;
+      animation: ${fadeFromLeft} 1.4s ease;
     }
 
     h1 {
       text-align: center;
       font-weight: 500;
       color: var(--color-primary);
+      animation: ${fadeFromRight} 1.4s ease;
     }
   }
 
