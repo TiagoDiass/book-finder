@@ -52,9 +52,14 @@ function Main() {
     <>
       <InputSection>
         <div className="container">
-          <h1 className="logo">
-            <span className="logo-blue">Book</span>Finder
-          </h1>
+          <div className="logo">
+            <h1>
+              <span className="logo-blue">Book</span>Finder
+            </h1>
+            <h2>
+              The <span className="logo-blue">right place</span> for you to find a book
+            </h2>
+          </div>
 
           <form onSubmit={handleSubmit}>
             <div className="label">

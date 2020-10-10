@@ -22,7 +22,7 @@ const fadeFromBottom = keyframes`
 `;
 
 export const InputSection = styled.section`
-  height: 35vh;
+  height: 37vh;
 
   .container {
     width: 75%;
@@ -40,11 +40,20 @@ export const InputSection = styled.section`
   padding-top: 1.5rem;
   width: 100%;
 
-  h1.logo {
-    font-size: 3rem;
-    letter-spacing: 0.5px;
-    font-weight: 300;
-    margin-bottom: 1.7rem;
+  .logo {
+    margin-bottom: 1.8rem;
+    text-align: center;
+    color: var(--white);
+
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 0.5px;
+      font-weight: 400;
+    }
+
+    h2 {
+      font-weight: 300;
+    }
 
     .logo-blue {
       color: var(--color-blue);
