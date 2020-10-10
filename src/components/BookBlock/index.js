@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { BookBlock as BookBlockStyled } from './styles';
+import { BookBlock as BookBlockStyled, DetailsButton } from './styles';
 
 const BookBlock = (props) => {
-  const { thumbnailUrl, title, author, description } = props.book;
+  const { thumbnailUrl, title, authors, description } = props.book;
 
   return (
     <BookBlockStyled>
@@ -11,9 +11,16 @@ const BookBlock = (props) => {
         <img src={thumbnailUrl} alt={`${title} - Thumbnail`} />
       </div>
       <div className="book-data">
-        <h3>{title}</h3>
-        <h5>{author}</h5>
+        <div className="main-info">
+          <h3>{title}</h3>
+          <h5>{authors ? authors.join(', ') : ''}</h5>
+        </div>
         <p>{description}</p>
+        <div className="details">
+          <DetailsButton>
+            DETAILS <i className="fas fa-info-circle"></i>
+          </DetailsButton>
+        </div>
       </div>
     </BookBlockStyled>
   );

@@ -132,12 +132,16 @@ export const SubmitButton = styled.button.attrs((props) => ({
 `;
 
 export const BooksSection = styled.section`
-  margin-top: -1.6rem;
+  margin-top: -2rem;
   display: flex;
   justify-content: center;
+  background: transparent;
 
   .container {
-    width: 75%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   h1.no-books {
