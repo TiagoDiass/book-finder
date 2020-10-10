@@ -67,6 +67,7 @@ export const InputSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2rem;
 
     .label {
       width: 100%;
@@ -95,7 +96,51 @@ export const InputSection = styled.section`
     .error {
       width: 100%;
       font-size: 0.9rem;
+      margin-bottom: 0.8rem;
     }
+  }
+
+  @media (max-width: 1200px) {
+    form {
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 820px) {
+    .container {
+      width: 90%;
+    }
+
+    form {
+      width: 100%;
+    }
+
+    .label label {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .logo {
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: var(--white);
+
+      h1 {
+        font-size: 2.4rem;
+        letter-spacing: 0.5px;
+        font-weight: 400;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+        font-weight: 300;
+      }
+    }
+  }
+
+  @media (max-width: 520px) {
+    height: 42vh;
   }
 `;
 
@@ -141,7 +186,6 @@ export const SubmitButton = styled.button.attrs((props) => ({
 `;
 
 export const BooksSection = styled.section`
-  margin-top: -2rem;
   display: flex;
   justify-content: center;
   background: transparent;
@@ -154,9 +198,15 @@ export const BooksSection = styled.section`
   }
 
   h1.no-books {
-    margin-top: 2.5rem;
+    margin-top: 6.7rem;
     text-align: center;
     font-weight: 500;
     color: var(--color-primary);
+  }
+
+  @media (max-width: 1125px) {
+    .container {
+      width: 100%;
+    }
   }
 `;

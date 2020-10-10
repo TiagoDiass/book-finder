@@ -10,7 +10,7 @@ export const BookBlock = styled.div`
   box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 
   .thumbnail {
     width: 35%;
@@ -62,6 +62,34 @@ export const BookBlock = styled.div`
 
   &:hover {
     transform: translateY(-9px);
+  }
+
+  @media (max-width: 850px) {
+    width: 100%;
+    margin: 0.6rem;
+
+    .thumbnail {
+      width: 25%;
+    }
+
+    .book-data {
+      width: 75%;
+    }
+
+    &:hover {
+      transform: translateY(0);
+      opacity: 0.9;
+    }
+  }
+
+  @media (max-width: 570px) {
+    .thumbnail {
+      width: 35%;
+    }
+
+    .book-data {
+      width: 65%;
+    }
   }
 `;
 
