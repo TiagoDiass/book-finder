@@ -41,7 +41,6 @@ function Main() {
           authors: book.volumeInfo.authors,
           description: book.volumeInfo.description,
           thumbnailUrl,
-          infoLink: book.volumeInfo.infoLink,
         };
       });
 
