@@ -69,6 +69,8 @@ function Main() {
 
     setQuery('');
     setBooks([]);
+    localStorage.removeItem('query');
+    localStorage.removeItem('books');
   }
 
   return (
