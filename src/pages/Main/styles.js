@@ -104,17 +104,6 @@ export const InputSection = styled.section`
       width: 100%;
       display: flex;
       align-items: center;
-
-      input {
-        width: 80%;
-        height: 100%;
-        border: none;
-        outline: none;
-        background-color: var(--color-secondary);
-        color: var(--white);
-        font-size: 1.1rem;
-        padding: 0 0.5rem;
-      }
     }
 
     .error {
@@ -252,4 +241,34 @@ export const BooksSection = styled.section`
       font-size: 1.2rem;
     }
   }
+`;
+
+export const ClearButton = styled.button`
+  width: 10%;
+  height: 100%;
+  padding: 0.5rem 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--color-secondary);
+  font-size: 1.07rem;
+  color: var(--white);
+`;
+
+export const QueryInput = styled.input.attrs((props) => ({
+  width70: props.width70,
+}))`
+  width: 80%;
+
+  &[width70] {
+    width: 70%;
+  }
+
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--color-secondary);
+  color: var(--white);
+  font-size: 1.1rem;
+  padding: 0 0.5rem;
 `;

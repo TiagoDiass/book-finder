@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import api from '../../services/api';
 import svg from '../../assets/images/books.svg';
 
 // Styled components
-import { InputSection, SubmitButton, BooksSection } from './styles';
+import { InputSection, SubmitButton, BooksSection, ClearButton, QueryInput } from './styles';
 import BookBlock from '../../components/BookBlock';
 
 function Main() {
@@ -13,21 +13,16 @@ function Main() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  function handleInput(event) {
-    setQuery(event.target.value);
-  }
-
-  async function handleSubmit(event) {
-    event.preventDefault();
-
-    if (!query) {
-      setError('You must type something!');
-      setTimeout(() => {
-        setError('');
-      }, 3000);
-      return;
+  useEffect(() => {
+    const booksFromStorage = localStorage.getItem('books');
+    const queryFromStorage = localStorage.getItem('query');
+    if (booksFromStorage && queryFromStorage) {
+      setBooks(JSON.parse(booksFromStorage));
+      setQuery(queryFromStorage);
     }
+  }, []);
 
+  async function fetchBooks() {
     setLoading(true);
     await api.get(`/volumes?q=${query}`).then((response) => {
       const books = response.data.items.map((book) => {
@@ -46,7 +41,34 @@ function Main() {
 
       setBooks(books);
       setLoading(false);
+      localStorage.setItem('books', JSON.stringify(books));
+      localStorage.setItem('query', query);
     });
+  }
+
+  function handleInput(event) {
+    setQuery(event.target.value);
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    if (!query) {
+      setError('You must type something!');
+      setTimeout(() => {
+        setError('');
+      }, 3000);
+      return;
+    }
+
+    await fetchBooks();
+  }
+
+  function handleClear(event) {
+    event.preventDefault();
+
+    setQuery('');
+    setBooks([]);
   }
 
   return (
@@ -68,14 +90,21 @@ function Main() {
             </div>
 
             <div className="input">
-              <input
+              <QueryInput
                 onChange={handleInput}
                 value={query}
                 autoComplete="off"
                 type="text"
                 id="book"
                 placeholder="Author or book name"
+                width70={query && books.length}
               />
+
+              {query && (
+                <ClearButton type="button" onClick={handleClear}>
+                  <i className="fas fa-times"></i>
+                </ClearButton>
+              )}
 
               <SubmitButton loading={loading ? 'loading' : undefined} type="submit">
                 {loading ? <i className="fas fa-spinner"></i> : <i className="fas fa-search"></i>}
@@ -90,6 +119,7 @@ function Main() {
           </form>
         </div>
       </InputSection>
+
       <BooksSection>
         <div className="container">
           {!books.length ? (
