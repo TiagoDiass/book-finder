@@ -1,4 +1,16 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const fade = keyframes`
+  from {
+    transform: scale(0);
+    opacity: 0;
+  } 
+  
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
 
 export const FullPageContainer = styled.div`
   width: 100vw;
@@ -34,6 +46,11 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
+
+  @media (max-width: 725px) {
+    height: 80%;
+  }
 `;
 
 export const LeftBlock = styled.aside`
@@ -46,6 +63,7 @@ export const LeftBlock = styled.aside`
   justify-content: space-between;
   border-radius: 0.5rem;
   box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.15);
+  animation: ${fade} 1s ease;
 
   div.title-and-image {
     display: flex;
@@ -81,14 +99,63 @@ export const LeftBlock = styled.aside`
       }
     }
   }
+
+  @media (max-width: 1280px) {
+    width: 49%;
+  }
+
+  @media (max-width: 725px) {
+    width: 100%;
+    height: 80%;
+    order: 1;
+
+    overflow-y: scroll;
+
+    /* Scroll width */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Scroll Track */
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    /* Scroll Handle */
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-primary);
+      border-radius: 10px;
+    }
+
+    /* Scroll Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      filter: brightness(0.9);
+    }
+
+    div.title-and-image {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    div.stats {
+      align-items: center;
+
+      .stat-row {
+        text-align: center;
+      }
+    }
+  }
 `;
 
 export const MiddleBlock = styled.div`
   height: 100%;
   width: 70%;
 
+  animation: ${fade} 1.5s ease;
+
   ${(props) =>
-    props.cover2Columns &&
+    !props.cover2Columns &&
     `
     width: 45%;
   `}
@@ -101,25 +168,27 @@ export const MiddleBlock = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 6px;
+
   overflow-y: scroll;
-  /* width */
+
+  /* Scroll width */
   &::-webkit-scrollbar {
     width: 5px;
   }
 
-  /* Track */
+  /* Scroll Track */
   &::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
   }
 
-  /* Handle */
+  /* Scroll Handle */
   &::-webkit-scrollbar-thumb {
     background: var(--color-primary);
     border-radius: 10px;
   }
 
-  /* Handle on hover */
+  /* Scroll Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
     filter: brightness(0.9);
   }
@@ -131,6 +200,38 @@ export const MiddleBlock = styled.div`
 
   p.description {
     font-weight: 400;
+  }
+
+  @media (max-width: 1280px) {
+    order: 3;
+    width: 100%;
+    margin-top: 0.5rem;
+    max-height: 450px;
+    margin-bottom: 0.65rem;
+
+    ${(props) =>
+      props.cover2Columns &&
+      css`
+        order: 2;
+        width: 49%;
+        margin: 0;
+        height: 100%;
+      `}
+  }
+
+  @media (max-width: 725px) {
+    width: 100%;
+    order: 2;
+
+    h2 {
+      text-align: center;
+    }
+
+    ${(props) =>
+      props.cover2Columns &&
+      css`
+        margin: 0.6rem 0;
+      `}
   }
 `;
 
@@ -144,6 +245,7 @@ export const RightBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  animation: ${fade} 2s ease;
 
   .is-for-sale-label {
     text-align: center;
@@ -197,6 +299,7 @@ export const RightBlock = styled.div`
       color: var(--color-blue);
       font-weight: 500;
       letter-spacing: 1px;
+      text-align: end;
     }
   }
 
@@ -226,5 +329,14 @@ export const RightBlock = styled.div`
         color: var(--white);
       }
     }
+  }
+
+  @media (max-width: 1280px) {
+    width: 49%;
+  }
+
+  @media (max-width: 725px) {
+    width: 100%;
+    order: 3;
   }
 `;

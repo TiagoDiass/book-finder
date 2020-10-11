@@ -14,8 +14,6 @@ function BookDetails(props) {
     async function fetchBook() {
       setLoading(true);
       await api.get(`/volumes/${props.match.params.book_id}`).then(({ data: response }) => {
-        console.log(response);
-
         const thumbnailUrl = response.volumeInfo.imageLinks
           ? response.volumeInfo.imageLinks.thumbnail
           : 'https://books.google.com.br/googlebooks/images/no_cover_thumb.gif';
@@ -96,16 +94,18 @@ function BookDetails(props) {
                   <label>Pages amount:</label> <span>{book.pagesAmount}</span>
                 </div>
                 <div className="stat-row">
-                  <label>Average Rating:</label> <span>{book.averageRating}</span>
+                  <label>Average Rating:</label> <span>{book.averageRating} / 5</span>
                 </div>
               </div>
             </LeftBlock>
-            <MiddleBlock cover2Columns={book.saleInfo && book.saleInfo.isForSale}>
+
+            <MiddleBlock cover2Columns={book.saleInfo && !book.saleInfo.isForSale}>
               <div className="desc-row">
-                <h2>Description</h2>
+                <h2>Book Description</h2>
                 <p className="description" dangerouslySetInnerHTML={{ __html: book.description }}></p>
               </div>
             </MiddleBlock>
+
             {book.saleInfo && book.saleInfo.isForSale && (
               <RightBlock>
                 <div className="is-for-sale-label">
