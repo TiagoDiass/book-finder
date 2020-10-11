@@ -99,7 +99,7 @@ function BookDetails(props) {
               </div>
             </LeftBlock>
 
-            <MiddleBlock cover2Columns={book.saleInfo && book.saleInfo.isForSale}>
+            <MiddleBlock cover2Columns={book.saleInfo && !book.saleInfo.isForSale}>
               <div className="desc-row">
                 <h2>Book Description</h2>
                 <p className="description" dangerouslySetInnerHTML={{ __html: book.description }}></p>

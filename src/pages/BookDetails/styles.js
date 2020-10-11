@@ -1,4 +1,16 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const fade = keyframes`
+  from {
+    transform: scale(0);
+    opacity: 0;
+  } 
+  
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
 
 export const FullPageContainer = styled.div`
   width: 100vw;
@@ -51,6 +63,7 @@ export const LeftBlock = styled.aside`
   justify-content: space-between;
   border-radius: 0.5rem;
   box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.15);
+  animation: ${fade} 1s ease;
 
   div.title-and-image {
     display: flex;
@@ -139,8 +152,10 @@ export const MiddleBlock = styled.div`
   height: 100%;
   width: 70%;
 
+  animation: ${fade} 1.5s ease;
+
   ${(props) =>
-    props.cover2Columns &&
+    !props.cover2Columns &&
     `
     width: 45%;
   `}
@@ -193,6 +208,15 @@ export const MiddleBlock = styled.div`
     margin-top: 0.5rem;
     max-height: 450px;
     margin-bottom: 0.65rem;
+
+    ${(props) =>
+      props.cover2Columns &&
+      css`
+        order: 2;
+        width: 49%;
+        margin: 0;
+        height: 100%;
+      `}
   }
 
   @media (max-width: 725px) {
@@ -202,6 +226,12 @@ export const MiddleBlock = styled.div`
     h2 {
       text-align: center;
     }
+
+    ${(props) =>
+      props.cover2Columns &&
+      css`
+        margin: 0.6rem 0;
+      `}
   }
 `;
 
@@ -215,6 +245,7 @@ export const RightBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  animation: ${fade} 2s ease;
 
   .is-for-sale-label {
     text-align: center;
