@@ -1,5 +1,6 @@
 <h1 align="center">
-  📚 BookFinder 📚
+  <!--📚 BookFinder 📚-->
+  <img src="screenshots/logo.png" height="150">
 </h1>
 
 <h4 align="center">
