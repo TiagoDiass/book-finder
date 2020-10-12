@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-import api from '../../services/api';
+// Images
 import svg from '../../assets/images/books.svg';
+
+// Plugins
+import api from '../../services/api';
+import { Toast } from '../../services/sweetAlert';
 
 // Styled components
 import { InputSection, SubmitButton, BooksSection, ClearButton, QueryInput } from './styles';
@@ -25,6 +29,14 @@ function Main() {
   async function fetchBooks() {
     setLoading(true);
     await api.get(`/volumes?q=${query}`).then((response) => {
+      if (!response.data.totalItems) {
+        setLoading(false);
+        return Toast.fire({
+          icon: 'error',
+          title: 'No books found with this query',
+        });
+      }
+
       const books = response.data.items.map((book) => {
         const thumbnailUrl = book.volumeInfo.imageLinks
           ? book.volumeInfo.imageLinks.thumbnail
