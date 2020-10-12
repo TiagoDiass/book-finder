@@ -1,68 +1,87 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+  <!--📚 BookFinder 📚-->
+  <img src="screenshots/logo.png" height="150">
+</h1>
 
-## Available Scripts
+<h4 align="center">
+  A Web Application developed with ReactJS where users can search for books and maybe buy some of them using the Google Books API
+</h4>
 
-In the project directory, you can run:
+<p align="center">
+  <img alt="Repo's top language" src="https://img.shields.io/static/v1?label=Main%20technology&message=JavaScript%2FReact&style=for-the-badge&color=61DBFB&labelColor=000000">
+  <img alt="Repository size" src="https://img.shields.io/static/v1?label=Repo%20size&message=250%20KB&style=for-the-badge&color=61DBFB&labelColor=000000">
+</p>
 
-### `yarn start`
+<p align="center">
+  <a href="#technologies">Used Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#objective">Project's goal</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#final-result">Final Result</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#how-to-use">How to Run</a>
+</p>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;![](Preview.gif)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<p align="center">
+  <a href="https://react-book-finder.netlify.app/" target="_blank">
+    <img alt="Demo on Netlify" src="https://res.cloudinary.com/lukemorales/image/upload/v1563043495/readme_logos/demo_on_netlify_bbuvjz.png">
+  </a>
+</p>
 
-### `yarn test`
+<h2 id="techonologies" name="technologies">
+  :rocket: Used Technologies
+</h2>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [ReactJS](https://pt-br.reactjs.org/) to build the app in general
+- [Styled Components](https://styled-components.com/) to style all the app(components, views and so on)
+- [React Router](https://reactrouter.com/) to make multiple routes
+- [Sweet Alert](https://sweetalert.js.org/) to make some toast messages
+- [Google Books API](https://developers.google.com/books/docs/v1/reference/) to get all the data that the app uses
 
-### `yarn build`
+<h2 id="objective" name="objective">
+  :dart: Project's goal
+</h2>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The aim of this project was practicing React, a great tech that I've started learning recently, with this app, I could practice some concepts like props, conditional rendering, components managment in React, styling with styled components, I enjoyed it really much and I'll keep learning React for sure, I really liked it!
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<h2 id="final-result" name="final-result">
+  :clipboard: Final Result
+</h2>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### [You can check the final result clicking here](https://react-book-finder.netlify.app/)
 
-### `yarn eject`
+<h2 id="how-to-use" name="how-to-use">
+  :information_source: How to Run
+</h2>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Follow the steps below to run the project in your machine, before it all, you need to have the Git, Node.js and Yarn installed on your computer, then follow the steps below:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Clone the repo
+$ git clone https://github.com/TiagoDiass/book-finder.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Enter in the directory
+$ cd book-finder
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Install the dependencies
+$ yarn
 
-## Learn More
+# Start the app
+$ yarn start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+After following these steps, your terminal will show you what port is the app running on(it's usually the 3000), so you'll just need to open your browser
+and open `localhost:3000`. To stop the app just go back to the terminal and press <kbd>CTRL</kbd>+<kbd>C</kbd>.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+Hope you enjoyed this project :smiley:<br>
+:wave: [Get in touch!](https://www.linkedin.com/in/tiagodiass)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Author: Tiago Dias
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
