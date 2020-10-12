@@ -81,6 +81,7 @@ function Main() {
             <h1>
               <span className="logo-blue">Book</span>Finder
             </h1>
+
             <h2>
               The <span className="logo-blue">right place</span> for you to find a book
             </h2>
