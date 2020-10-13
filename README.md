@@ -39,6 +39,7 @@
 - [Styled Components](https://styled-components.com/) to style all the app(components, views and so on)
 - [React Router](https://reactrouter.com/) to make multiple routes
 - [Sweet Alert](https://sweetalert.js.org/) to make some toast messages
+- [Axios](https://github.com/axios/axios) to make the all the requests to the API
 - [Google Books API](https://developers.google.com/books/docs/v1/reference/) to get all the data that the app uses
 
 <h2 id="objective" name="objective">
